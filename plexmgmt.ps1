@@ -43,12 +43,27 @@ function subMenu2 {
             Write-Host -ForegroundColor DarkCyan " TV Show?"
         $subMenu2 = Read-Host "`nSelection (leave blank to quit)"
         # Movie 
-        if($subMenu2 -eq 1){
-            moviefolder
+        if($subMenu2 -eq 0){
+            Write-Host "New Movie Folder"
+            $movie = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/PlexMovieFolder.ps1
+            invoke-expression $($movie.content)
+			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
+            Write-Host "`nPress any key to return to the previous menu"
+            [void][System.Console]::ReadKey($true)
         }
-        # TV Show 
+        # TV Show
+        if($subMenu2 -eq 1){
+            Write-Host "New TV Show Folder"
+            $tvshow = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/PlexTVSHOWFolder.ps1
+            invoke-expression $($tvshow.content)
+			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
+            Write-Host "`nPress any key to return to the previous menu"
+            [void][System.Console]::ReadKey($true)
+        }
+        # Exit 
         if($subMenu2 -eq 2){
-            tvshowfolder
+         exit
+        }
         }
     }
 }
