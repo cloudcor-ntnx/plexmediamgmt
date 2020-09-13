@@ -5,5 +5,5 @@
     #>
 
 $TVfolder = Read-host -prompt 'Enter the Name of the TV Show'
-New-Item -Path "Z:\TV-SHOWS" -Name "$folderName" -ItemType "directory"
+New-Item -Path "Z:\TV-SHOWS" -Name "$TVfolder" -ItemType "directory"
             write-host "Creating Folder..."
