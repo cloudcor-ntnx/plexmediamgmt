@@ -41,9 +41,11 @@ function subMenu2 {
             Write-Host -ForegroundColor DarkCyan " Movie?"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "2"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
             Write-Host -ForegroundColor DarkCyan " TV Show?"
+	Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "3"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
+            Write-Host -ForegroundColor DarkCyan " Exit?"
         $subMenu2 = Read-Host "`nSelection (leave blank to quit)"
         # Movie 
-        if($subMenu2 -eq 0){
+        if($subMenu2 -eq 1){
             Write-Host "New Movie Folder"
             $movie = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/PlexMovieFolder.ps1
             invoke-expression $($movie.content)
@@ -52,7 +54,7 @@ function subMenu2 {
             [void][System.Console]::ReadKey($true)
         }
         # TV Show
-        if($subMenu2 -eq 1){
+        if($subMenu2 -eq 2){
             Write-Host "New TV Show Folder"
             $tvshow = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/PlexTVSHOWFolder.ps1
             invoke-expression $($tvshow.content)
@@ -61,7 +63,7 @@ function subMenu2 {
             [void][System.Console]::ReadKey($true)
         }
         # Exit 
-        if($subMenu2 -eq 2){
+        if($subMenu2 -eq 3){
          exit
         }
         }
