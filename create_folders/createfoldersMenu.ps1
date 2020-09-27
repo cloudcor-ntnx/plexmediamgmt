@@ -55,9 +55,11 @@ function subMenu2 {
         Clear-Host
         Write-Host "`n`t`t Create New Folders`n"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "1"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
-            Write-Host -ForegroundColor DarkCyan " For MKV?"
+        Write-Host -ForegroundColor DarkCyan " For MKV?"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "2"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
-            Write-Host -ForegroundColor DarkCyan " For Plex Library?"
+        Write-Host -ForegroundColor DarkCyan " For Plex TV Show Folder 1?"
+	Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "3"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
+        Write-Host -ForegroundColor DarkCyan " For Plex TV Show Folder 2?"
         $subMenu2 = Read-Host "`nSelection (leave blank to quit)"
         # MKV TV Show  
         if($subMenu2 -eq 1){
@@ -68,10 +70,19 @@ function subMenu2 {
             Write-Host "`nPress any key to return to the previous menu"
             [void][System.Console]::ReadKey($true)
         }
-        # Plex Library TV Show Folder 
+        # Plex Library TV Show Folder 1
         if($subMenu2 -eq 2){
             Write-Host "New Plex TV Show Folder"
             $tvshow = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/create_folders/PlexTVSHOWFolder.ps1
+            invoke-expression $($tvshow.content)
+			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
+            Write-Host "`nPress any key to return to the previous menu"
+            [void][System.Console]::ReadKey($true)
+        }
+	        # Plex Library TV Show Folder 2
+        if($subMenu3 -eq 3){
+            Write-Host "New Plex TV Show Folder"
+            $tvshow = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/create_folders/PlexTVSHOWFolder2.ps1
             invoke-expression $($tvshow.content)
 			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
             Write-Host "`nPress any key to return to the previous menu"
