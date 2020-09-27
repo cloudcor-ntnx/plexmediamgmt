@@ -22,8 +22,10 @@ function mainMenu {
         Write-Host -ForegroundColor DarkCyan " Create New Folders"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "2"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
         Write-Host -ForegroundColor DarkCyan " Rename Files"
-		Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "3"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
-        Write-Host -ForegroundColor DarkCyan " Check free disk space"	
+	Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "3"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
+        Write-Host -ForegroundColor DarkCyan " Check free disk space"
+	Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "4"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
+        Write-Host -ForegroundColor DarkCyan " Check free disk space"
         $mainMenu = Read-Host "`nSelection (leave blank to quit)"
 		
         #IF statements below for the selected option above
@@ -35,9 +37,13 @@ function mainMenu {
         if($mainMenu -eq 2){
             subMenu2
         }
-		#subMenu3 Check Free space 
+	#subMenu3 Check Free space 
 		if($mainMenu -eq 3){
             subMenu3
+        }
+	#subMenu4 robocopy files  
+		if($mainMenu -eq 4){
+            subMenu4
         }
     }
 }
@@ -72,6 +78,15 @@ function subMenu3 {
             Write-Host "Connecting to check free space script"
             $gitfreespace = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/freespace_check/mountpoints_free.ps1
             invoke-expression $($gitfreespace.content)
+			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
+            [void][System.Console]::ReadKey($true)
+        }
+function subMenu4 {
+    $subMenu4 = 'X'
+    if($subMenu4 -ne ''){
+            Write-Host "Connecting to robocopy script"
+            $gitrobocopy = invoke-webrequest https://raw.githubusercontent.com/cloudcor-ntnx/plexmediamgmt/master/movefiles/robocopyfiles.ps1
+            invoke-expression $($gitrobocopy.content)
 			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
             [void][System.Console]::ReadKey($true)
         }
