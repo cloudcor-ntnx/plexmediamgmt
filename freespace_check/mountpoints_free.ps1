@@ -8,6 +8,8 @@ $FreePerc = @{Name="Free(%)";expression={[math]::round(((($_.FreeSpace / 1073741
 function get-mountpoints {
 $volumes = Get-WmiObject win32_volume -Filter "DriveType='3'"
 $volumes | Select Name, Label, DriveLetter, FileSystem, $TotalGB, $FreeGB, $FreePerc | Format-Table -AutoSize
+Write-Host "`nPress any key to return to the previous menu"
+[void][System.Console]::ReadKey($true)
 }
  
 get-mountpoints
