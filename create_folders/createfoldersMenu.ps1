@@ -2,7 +2,7 @@ function mainMenu {
     $mainMenu = 'X'
     while($mainMenu -ne ''){
         Clear-Host
-        Write-Host "`n`t`t Plex Media Mgmt`n"
+        Write-Host "`n`t`t Create New Folders`n"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "1"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
             Write-Host -ForegroundColor DarkCyan " New Movie?"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "2"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
@@ -23,7 +23,7 @@ function subMenu1 {
     $subMenu1 = 'X'
     while($subMenu1 -ne ''){
         Clear-Host
-        Write-Host "`n`t`t Plex Media Mgmt`n"
+        Write-Host "`n`t`t Create New Folders`n"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "1"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
             Write-Host -ForegroundColor DarkCyan " For MakeMKV?"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "2"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
@@ -53,7 +53,7 @@ function subMenu2 {
     $subMenu2 = 'X'
     while($subMenu2 -ne ''){
         Clear-Host
-        Write-Host "`n`t`t Plex Media Mgmt`n"
+        Write-Host "`n`t`t Create New Folders`n"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "1"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
             Write-Host -ForegroundColor DarkCyan " For MKV?"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "2"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
