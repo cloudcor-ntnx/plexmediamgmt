@@ -38,7 +38,8 @@ function subMenu1 {
     if($subMenu1 -ne ''){
             $i = 1
             $path = Read-Host -prompt "Enter Path of Files"
-			$showname_ = Read-Host prompt "Enter the files name" 
+	                write-host = "'Getting the name of the DVD'" 
+			$showname_ = Get-CimInstance Win32_logicaldisk |select VolumeName 
 			Get-ChildItem -Path $path -Filter *.mkv |
             ForEach-Object {
             $extension = $_.Extension
