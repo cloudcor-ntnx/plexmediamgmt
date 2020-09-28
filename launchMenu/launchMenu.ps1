@@ -80,6 +80,8 @@ function subMenu3 {
             invoke-expression $($gitfreespace.content)
 			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
             [void][System.Console]::ReadKey($true)
+	    
+	 }   
 }
 function subMenu4 {
     $subMenu4 = 'X'
