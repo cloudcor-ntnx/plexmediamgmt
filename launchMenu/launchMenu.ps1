@@ -92,7 +92,7 @@ function subMenu4 {
             invoke-expression $($gitrobocopy.content)
 			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
             [void][System.Console]::ReadKey($true)
-         }
-    }        
-}
+        }
+}        
+
 mainMenu
