@@ -25,7 +25,7 @@ function mainMenu {
 	Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "3"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
         Write-Host -ForegroundColor DarkCyan " Check free disk space"
 	Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "4"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
-        Write-Host -ForegroundColor DarkCyan " Check free disk space"
+        Write-Host -ForegroundColor DarkCyan " Copy Files"
         $mainMenu = Read-Host "`nSelection (leave blank to quit)"
 		
         #IF statements below for the selected option above
