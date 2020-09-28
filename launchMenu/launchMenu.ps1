@@ -5,8 +5,9 @@
         Main Menu gives option to select which type of script to use:
 		
 		launchmenu --> if 1 = submenu1 create folders
-                  2 = submenu2 rename files 
+                                  2 = submenu2 rename files 
 				  3 = check mountpoint freespace 
+				  4 = robocopy 
 		
 #>
 
@@ -91,7 +92,7 @@ function subMenu4 {
             invoke-expression $($gitrobocopy.content)
 			Write-Host -ForegroundColor DarkCyan "`nScript execution complete."
             [void][System.Console]::ReadKey($true)
-}
-}        
+         }
+    }        
 }
 mainMenu
